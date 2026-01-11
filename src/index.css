@@ -2,87 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* 《颜色反应·情绪干扰》游戏设计系统 - 卡通可爱风格 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* 主色调 - 温暖活泼 */
+    --background: 45 100% 98%;
+    --foreground: 280 60% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 280 60% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 280 60% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* 主要品牌色 - 可爱紫粉色 */
+    --primary: 280 70% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* 次要色 - 柔和蓝绿 */
+    --secondary: 180 60% 85%;
+    --secondary-foreground: 180 60% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 30% 90%;
+    --muted-foreground: 280 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* 强调色 - 活力橙 */
+    --accent: 35 100% 65%;
+    --accent-foreground: 35 100% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 280 30% 85%;
+    --input: 280 30% 85%;
+    --ring: 280 70% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* 游戏颜色 */
+    --game-red: 0 80% 55%;
+    --game-blue: 210 90% 55%;
+    --game-green: 140 70% 45%;
+    --game-yellow: 45 100% 50%;
+    --game-purple: 280 70% 60%;
+    --game-orange: 25 100% 55%;
+
+    /* 模式颜色 */
+    --mode-normal: 140 70% 45%;
+    --mode-stress: 35 100% 55%;
+    --mode-extreme: 0 80% 55%;
+
+    /* 渐变 */
+    --gradient-cute: linear-gradient(135deg, hsl(280 70% 60%), hsl(320 70% 65%), hsl(35 100% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(140 70% 45%), hsl(160 60% 50%));
+    --gradient-error: linear-gradient(135deg, hsl(0 80% 55%), hsl(20 90% 55%));
+
+    /* 阴影 */
+    --shadow-cute: 0 8px 30px -10px hsl(280 70% 60% / 0.4);
+    --shadow-card: 0 4px 20px -5px hsl(280 30% 50% / 0.15);
+    --shadow-button: 0 4px 15px -3px hsl(280 70% 60% / 0.35);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 280 30% 8%;
+    --foreground: 45 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 280 30% 12%;
+    --card-foreground: 45 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 280 30% 12%;
+    --popover-foreground: 45 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 280 70% 65%;
+    --primary-foreground: 280 30% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 180 40% 25%;
+    --secondary-foreground: 180 60% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 280 20% 20%;
+    --muted-foreground: 280 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 35 100% 60%;
+    --accent-foreground: 35 100% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 280 20% 25%;
+    --input: 280 20% 25%;
+    --ring: 280 70% 65%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +120,114 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Nunito', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* 卡通按钮效果 */
+  .btn-cute {
+    @apply relative overflow-hidden transition-all duration-200;
+    box-shadow: var(--shadow-button);
+  }
+  
+  .btn-cute:hover {
+    @apply scale-105;
+    box-shadow: 0 6px 20px -3px hsl(var(--primary) / 0.45);
+  }
+  
+  .btn-cute:active {
+    @apply scale-95;
+  }
+
+  /* 卡片效果 */
+  .card-cute {
+    @apply rounded-3xl border-2 border-primary/20;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* 游戏颜色按钮 */
+  .game-btn-red {
+    @apply bg-[hsl(var(--game-red))] hover:bg-[hsl(0_80%_50%)] text-white;
+  }
+  
+  .game-btn-blue {
+    @apply bg-[hsl(var(--game-blue))] hover:bg-[hsl(210_90%_50%)] text-white;
+  }
+  
+  .game-btn-green {
+    @apply bg-[hsl(var(--game-green))] hover:bg-[hsl(140_70%_40%)] text-white;
+  }
+  
+  .game-btn-yellow {
+    @apply bg-[hsl(var(--game-yellow))] hover:bg-[hsl(45_100%_45%)] text-black;
+  }
+
+  /* 闪烁效果（极限模式） */
+  .flash-bg {
+    animation: flash-background 0.5s ease-in-out infinite;
+  }
+
+  @keyframes flash-background {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* 摇晃效果（答错时） */
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
+  }
+
+  /* 弹跳效果 */
+  .bounce-in {
+    animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes bounce-in {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* 脉冲效果 */
+  .pulse-cute {
+    animation: pulse-cute 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-cute {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  /* 浮动效果 */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* 连击特效 */
+  .combo-glow {
+    animation: combo-glow 0.3s ease-out;
+  }
+
+  @keyframes combo-glow {
+    0% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.7); }
+    100% { box-shadow: 0 0 20px 10px hsl(var(--accent) / 0); }
+  }
+
+  /* 进度条动画 */
+  .progress-animate {
+    transition: width 0.3s ease-out;
   }
 }
